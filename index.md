@@ -16,7 +16,7 @@ Utilizing SSO is as straightforward as operating any other search engine. Simply
 
 We support search for **English** and **Chinese**, but not other languages (such as C++) now.
 
-**NOTICE**: *One distinct feature of SSO compared to Google is that **we don't support natural language input queries** (for example, "how to set up DKU vpn?"). Instead, it is more effective to search for a single term like "VPN". This approach is directly tied to our underlying algorithm, which isn't optimized for natural language processing. For a detailed explanation, please refer to our [Retrieval Engine](https://chat.openai.com/c/docs/Retrieval.html) section.*
+**NOTICE**: *One distinct feature of SSO compared to Google is that **we don't support natural language input queries** (for example, "how to set up DKU vpn?"). Instead, it is more effective to search for a single term like "VPN". This approach is directly tied to our underlying algorithm, which isn't optimized for natural language processing. For a detailed explanation, please refer to our [Retrieval Engine](./docs/Retrieval.html) section.*
 
 ## Unveiling the SSO Mechanism
 
