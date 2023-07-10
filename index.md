@@ -16,6 +16,8 @@ Utilizing SSO is as straightforward as operating any other search engine. Simply
 
 We support search for **English** and **Chinese**, but not other languages (such as C++) now.
 
+**NOTICE**: *One distinct feature of SSO compared to Google is that **we don't support natural language input queries** (for example, "how to set up DKU vpn?"). Instead, it is more effective to search for a single term like "VPN". This approach is directly tied to our underlying algorithm, which isn't optimized for natural language processing. For a detailed explanation, please refer to our [Retrieval Engine](https://chat.openai.com/c/docs/Retrieval.html) section.*
+
 ## Unveiling the SSO Mechanism
 
 As alluded to earlier, the SSO is powered by three primary components - the **Scraper**, **Data Processor**, and **Retrieval Engine**.
@@ -40,7 +42,9 @@ While this daily update allows us to maintain a [historical data repository](./d
 
 Our apologies if your search didn't yield the desired results. Yet, we consider such moments as opportunities for growth! 
 
-Please remember, as DKU's website is a relatively small digital platform, **it holds limited information**. While we strive for completeness, our current focus on **DKU-only** content means we can't match the vast range of a search engine like Google.
+First, make sure you didn't search **long sentences**, the capability for understanding natural language input is directly relate to our algorithm, you can refer to [Retrieval Engine](./docs/Retrieval.html) for detailed explanation.
+
+Also, please remember, as DKU's website is a relatively small digital platform, **it holds limited information**. While we strive for completeness, our current focus on **DKU-only** content means we can't match the vast range of a search engine like Google.
 
 But there's still a large possibility that we might have overlooked some important websites in our current [crawling strategy](./docs/Scraper.html). If you're aware of any such missed sites, we'd be grateful to know!
 
