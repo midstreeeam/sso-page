@@ -76,7 +76,7 @@ PageRank is a way of measuring the importance of a webpage. It was developed by 
 
 Generally it can be calculated like this:
 $$
-PR(p) = (1-d) + d \left( \frac{{PR(t_1)}}{{C(t_1)}} + \frac{{PR(t_2)}}{{C(t_2)}} + \ldots + \frac{{PR(t_n)}}{{C(t_n)}} \right)
+PR(p) = (1-d) + d \left( \frac{{PR(t_1)}}{{C(t_1)}} + \frac{{PR(t_2)}}{{C(t_2)}} + \ldots + \frac{{PR(t_n)}}{{C(t_n)}} \right)
 $$
 In this formula, $PR(p)$ represents the PageRank of a given page $p$. $PR(t_i)$ refers to the PageRank of the pages $t_i$ that link to page $p$, while $C(t_i)$ represents the number of outbound links from page $t_i$. The parameter $d$ is the damping factor, typically set to $0.85$, which represents the probability of a user randomly clicking on a link rather than following the links on the page.
 
@@ -113,7 +113,7 @@ While PageRank measures the importance of webpages, the TF-IDF and BM25 are algo
 
 Indeed, the crux of the TF-IDF algorithm is to multiply the term frequency (TF) with the inverse document frequency (IDF). This process results in a quantifiable metric that reflects the relationship between a token and a document. The formula to calculate TF-IDF is as follows:
 $$
-\text{{TF-IDF}}(t, d, D) = \frac{{\text{{TF}}(t, d)}}{{\sum_{{t' \in d}} \text{{TF}}(t', d)}} \times \log \left( \frac{{\left| D \right|}}{{\left| \{d' \in D : t \in d'\} \right|}} \right)
+\text{{TF-IDF}}(t, d, D) = \frac{{\text{{TF}}(t, d)}}{{\sum_{{t' \in d}} \text{{TF}}(t', d)}} \times \log \left( \frac{{\left| D \right|}}{{\left| \{d' \in D : t \in d'\} \right|}} \right)
 $$
 In this formula:
 
@@ -130,7 +130,7 @@ Similar to TF-IDF, BM25 calculates relevance based on Term Frequency (TF) and In
 
 Comparing to TF-IDF, it provides additional **Term Frequency Saturation**, **Document Length Normalization**, and **Tunable Parameters**. 
 $$
-\text{{BM25}}(q, D, d) = \sum_{i=1}^{n} \text{{IDF}}(q_i) \cdot \frac{{\text{{TF}}(q_i, d) \cdot (k_1 + 1)}}{{\text{{TF}}(q_i, d) + k_1 \cdot (1 - b + b \cdot \frac{{\text{{length}}(d)}}{{\text{{avg\_length}}}})}}
+\text{{BM25}}(q, D, d) = \sum_{i=1}^{n} \text{{IDF}}(q_i) \cdot \frac{{\text{{TF}}(q_i, d) \cdot (k_1 + 1)}}{{\text{{TF}}(q_i, d) + k_1 \cdot (1 - b + b \cdot \frac{{\text{{length}}(d)}}{{\text{{avg\_length}}}})}}
 $$
 In this formula:
 
@@ -152,7 +152,7 @@ The BM25 score for document $d$ given query $q$ is calculated using the followin
 
 Indeed, the algorithm employed in SSO is **not strictly BM25**, but more closely resembles **BM25+**, with the addition of weighting for specific elements, such as words appearing in the title.
 $$
-\text{{BM25+}}(q, D, d) = \sum_{i=1}^{n} \left( \text{{IDF}}(q_i) \cdot \frac{{\text{{TF}}(q_i, d) \cdot (k_1 + 1)}}{{\text{{TF}}(q_i, d) + k_1 \cdot (1 - b + b \cdot \frac{{\text{{length}}(d)}}{{\text{{avg\_length}}}})}} \right) + \sum_{i=1}^{n_t} \text{{TitleWeight}}(q_i, d) \cdot \text{{IDF}}(q_i)
+\text{{BM25+}}(q, D, d) = \sum_{i=1}^{n} \left( \text{{IDF}}(q_i) \cdot \frac{{\text{{TF}}(q_i, d) \cdot (k_1 + 1)}}{{\text{{TF}}(q_i, d) + k_1 \cdot (1 - b + b \cdot \frac{{\text{{length}}(d)}}{{\text{{avg\_length}}}})}} \right) + \sum_{i=1}^{n_t} \text{{TitleWeight}}(q_i, d) \cdot \text{{IDF}}(q_i)
 $$
 In our approach, we assign distinct weights to text found within different HTML tags such as `<title>`, `<h1>`, `<h2>`, `<em>` and so forth. This nuanced weighting allows us to prioritize and emphasize certain areas of the content, making the search results more accurate and relevant. (Maybe we should call it BM25++, or BM25#)
 
