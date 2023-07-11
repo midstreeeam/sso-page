@@ -60,7 +60,7 @@ We acknowledge that SSO may not encompass all information as it is primarily web
 
 We invite you to explore DKU-Wiki and begin contributing! As a fledgling project, we're eagerly looking for passionate contributors.  Every piece of knowledge shared enriches our community and furthers our collective learning.
 
-## Your Suggestions Fuel Our Progress
+## Report Bugs
 
 At present, SSO is in its beta stage, with numerous areas ripe for enhancement. We acknowledge that perfection can't be achieved overnight; therefore, we're committed to making steady progress with every step.
 
