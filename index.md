@@ -14,6 +14,8 @@ SSO is a fully automated, end-to-end search solution, primarily developed in Pyt
 
 Utilizing SSO is as straightforward as operating any other search engine. Simply input your query into the search bar and press enter to initiate your search journey.
 
+<img src="./imgs/index.gif" alt="GIF Example" style="zoom:70%;" />
+
 We support search for **English** and **Chinese**, but not other languages (such as C++) now.
 
 **NOTICE**: *One distinct feature of SSO compared to Google is that **we don't support natural language input queries** (for example, "how to set up DKU vpn?"). Instead, it is more effective to search for a single term like "VPN". This approach is directly tied to our underlying algorithm, which isn't optimized for natural language processing. For a detailed explanation, please refer to our [Retrieval Engine](./docs/Retrieval.html) section.*
