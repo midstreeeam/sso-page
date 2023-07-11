@@ -78,3 +78,11 @@ We strongly encourage and appreciate your suggestions as they play a pivotal rol
 - [Echchabi Othmane]() DKU student, class of 2025.  He offers idea for front-end improvements.
 - [Jay Shi](): DKU student, class of 2025. He is responsible for managing DII-relate tasks.
 
+## Doc Contents
+
+- [Homepage](#)
+- [Scraper](./docs/Scraper.html)
+- [Data Processor](./docs/processor.html)
+- [Retrieval Engine](./docs/Retrieval.html)
+- [Historical Data](./docs/History.html)
+- [Guide to Create Your Index](./docs/IndexGuide.html)

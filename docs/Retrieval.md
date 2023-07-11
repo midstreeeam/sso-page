@@ -32,7 +32,7 @@ Furthermore, vector retrieval is notably slower than Boolean retrieval, as it en
 
 **For optimizing similarity search in high-dimensional vector spaces, Kaiyuan Lou and Yizhou Bi conducted some research and proposed an optimization using Hierarchical Clustering.** 
 
-See their implementation **[here](https://github.com/loeeeee/DensePassageRetrieval)** and report/benchmark **[here](./EDRFHC.html)**.
+Although it hasn't been integrated into SSO, you can still see their implementation **[here](https://github.com/loeeeee/DensePassageRetrieval)** and report/benchmark **[here](./EDRFHC.html)**.
 
 ## Why I Can't Search an Entire Sentence
 
