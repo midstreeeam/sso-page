@@ -40,6 +40,14 @@ To ensure relevance and currency, **SSO updates its database every midnight**. T
 
 While this daily update allows us to maintain a [historical data repository](./docs/History.html), **we only display search results with currently available information**. This means, even if a webpage was valid in the past, it won't appear in your search results if it's no longer accessible. Our primary goal is to provide you with the most accurate and up-to-date information.
 
+## DKU-Wiki
+
+[DKU-Wiki]() is the sibling project of SSO, serving as a collaborative platform where individuals can contribute their unique insights, and **they are searchable on SSO.** You can craft a wiki for various topics, including majors, courses, events, or notable individuals - all these contents are easily accessible via SSO!
+
+We acknowledge that SSO may not encompass all information as it is primarily web-focused, potentially missing out on events or happenings on campus that aren't shared online. DKU-Wiki fills this gap, providing an opportunity for you to share the stories, experiences, and insights you wish to disseminate. We particularly encourage sharing of experiences and recommendations regarding majors and courses, as detailed course information might not be readily available on the website.
+
+We invite you to explore DKU-Wiki and begin contributing! As a fledgling project, we're eagerly looking for passionate contributors.  Every piece of knowledge shared enriches our community and furthers our collective learning.
+
 ## Can't Find What You're Looking For?
 
 Our apologies if your search didn't yield the desired results. Yet, we consider such moments as opportunities for growth! 
@@ -54,13 +62,13 @@ Simply **want your personal website to be searchable?** We're delighted to facil
 
 Additionally, if you've stumbled upon intriguing locations or sources that you think interesting, please don't hesitate to let us know! As long as the content is relevant to DKU, we would be more than happy to make it searchable within our system. Your active participation aids us in continually improving and expanding the breadth of our service.
 
-## DKU-Wiki
+## Unable to Connect?
 
-[DKU-Wiki]() is the sibling project of SSO, serving as a collaborative platform where individuals can contribute their unique insights, and **they are searchable on SSO.** You can craft a wiki for various topics, including majors, courses, events, or notable individuals - all these contents are easily accessible via SSO!
+**Ensure you are connected to DKU's WiFi**.
 
-We acknowledge that SSO may not encompass all information as it is primarily web-focused, potentially missing out on events or happenings on campus that aren't shared online. DKU-Wiki fills this gap, providing an opportunity for you to share the stories, experiences, and insights you wish to disseminate. We particularly encourage sharing of experiences and recommendations regarding majors and courses, as detailed course information might not be readily available on the website.
+SSO, being primarily an internal search engine, operates on a server within the DKU LAN. If you are not on campus at the moment, you need to connect to DKU's proxy in order to access our server.
 
-We invite you to explore DKU-Wiki and begin contributing! As a fledgling project, we're eagerly looking for passionate contributors.  Every piece of knowledge shared enriches our community and furthers our collective learning.
+**Both the DKU Wiki and SSO run on the same server**, implying that you need to be connected to the internal network to access the Wiki as well.
 
 ## Report Bugs
 
@@ -84,7 +92,7 @@ We strongly encourage and appreciate your suggestions as they play a pivotal rol
 
 - [Homepage](#)
 - [Scraper](./docs/Scraper.html)
-- [Data Processor](./docs/processor.html)
+- [Data Processor](./docs/Processor.html)
 - [Retrieval Engine](./docs/Retrieval.html)
 - [Historical Data](./docs/History.html)
 - [Guide to Create Your Index](./docs/IndexGuide.html)
