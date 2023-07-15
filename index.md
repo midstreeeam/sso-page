@@ -42,7 +42,7 @@ While this daily update allows us to maintain a [historical data repository](./d
 
 ## DKU-Wiki
 
-[DKU-Wiki]() is the sibling project of SSO, serving as a collaborative platform where individuals can contribute their unique insights, and **they are searchable on SSO.** You can craft a wiki for various topics, including majors, courses, events, or notable individuals - all these contents are easily accessible via SSO!
+[DKU-Wiki](http://hun.colab.dukekunshan.edu.cn:8000/#/indexing/) is the sibling project of SSO, serving as a collaborative platform where individuals can contribute their unique insights, and **they are searchable on SSO.** You can craft a wiki for various topics, including majors, courses, events, or notable individuals - all these contents are easily accessible via SSO!
 
 We acknowledge that SSO may not encompass all information as it is primarily web-focused, potentially missing out on events or happenings on campus that aren't shared online. DKU-Wiki fills this gap, providing an opportunity for you to share the stories, experiences, and insights you wish to disseminate. We particularly encourage sharing of experiences and recommendations regarding majors and courses, as detailed course information might not be readily available on the website.
 
@@ -84,7 +84,7 @@ We strongly encourage and appreciate your suggestions as they play a pivotal rol
 - [Kaiyuan Lou](): DKU student, class of 2024, founder of SSO. He is responsible for structural design and implementation of processor, retrieval engine, and benchmark system.
 - [Loe Bi](): DKU student, class of 2024, key contributor. His primary responsibilities encompass the design of the database structure, webapp deployment, and automation. Additionally, he has played a crucial role in implementing the data processor and retrieval engine.
 - [Sichang He](): DKU student, class of 2024, key contributor. He designed and implemented the [Scraper](./docs/Scraper.html), and he also contribute to front-end design.
-- [Beilong Tang](): DKU student, class of 2025, key contributor. He is responsible in design and implementation of [DKU-Wiki](), and he also contribute to benchmark system and front-end.
+- [Beilong Tang](): DKU student, class of 2025, key contributor. He is responsible in design and implementation of [DKU-Wiki](http://hun.colab.dukekunshan.edu.cn:8000/#/indexing/), and he also contribute to benchmark system and front-end.
 - [Echchabi Othmane]() DKU student, class of 2025.  He offers idea for front-end improvements.
 - [Jay Shi](): DKU student, class of 2025. He is responsible for managing DII-relate tasks.
 
