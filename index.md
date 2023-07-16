@@ -96,3 +96,4 @@ We strongly encourage and appreciate your suggestions as they play a pivotal rol
 - [Retrieval Engine](./docs/Retrieval.html)
 - [Historical Data](./docs/History.html)
 - [Guide to Create Your Index](./docs/IndexGuide.html)
+- [Dev Log](./docs/DevLog.html)
