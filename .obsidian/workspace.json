@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Scraper.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Scraper.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Scraper.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Scraper.md"
+                "file": "index.md"
               }
             }
           }
@@ -149,14 +149,21 @@
   },
   "active": "33a977add3fb932a",
   "lastOpenFiles": [
-    "docs/DevLog.md",
     "docs/IndexGuide.md",
+    "docs/devlog.md",
+    "docs/history.md",
+    "docs/processor.md",
+    "docs/retrieval.md",
+    "docs/scraper.md",
+    "index.md",
+    "README.md",
+    "docs/Scraper.md",
+    "docs/history.html",
+    "docs/devLog.html",
+    "docs/DevLog.md",
     "docs/History.md",
     "docs/Processor.md",
     "docs/Retrieval.md",
-    "docs/Scraper.md",
-    "index.md",
-    "README.md",
     "lib/scripts/tinycolor.js",
     "lib/scripts/webpage.js",
     "lib/scripts/graph_wasm.wasm",
@@ -165,8 +172,6 @@
     "lib/scripts/graph-render-worker.js",
     "lib/scripts",
     "lib/styles/snippets.css",
-    "lib/styles/theme.css",
-    "lib/styles/plugin-styles.css",
     "imgs/index.gif"
   ]
 }
