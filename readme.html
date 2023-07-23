@@ -3,9 +3,9 @@
 
 <head>
 
-  <title>Retrieval</title>
-  <base href="../">
-  <meta id="root-path" root-path="../">
+  <title>README</title>
+  <base href="./">
+  <meta id="root-path" root-path="./">
 
   <link rel="icon" sizes="96x96" href="https://publish-01.obsidian.md/access/f786db9fac45774fa4f0d8112e232d67/favicon-96x96.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
@@ -1188,94 +1188,15 @@
         </style>
         <div class="markdown-preview-sizer markdown-preview-section" style="padding-bottom: ; padding-top: var(--file-margins); padding-right: var(--file-margins); padding-left: var(--file-margins); width: 100%; position: absolute;">
           <div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
-          <div class="mod-header"></div>
-          <div>
-            <h1 data-heading="Retrieval Engine" id="Retrieval_Engine">Retrieval Engine</h1>
+          <div class="mod-header">
+            <div class="inline-title" contenteditable="true" spellcheck="true" autocapitalize="on" tabindex="-1" enterkeyhint="done">README</div>
           </div>
           <div>
-            <h2 data-heading="Overview" id="Overview" style="display: flex;">
-              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
-                  <path d="M3 8L12 17L21 8"></path>
-                </svg></div>Overview
-            </h2>
+            <h1 data-heading="sso-page" id="sso-page">sso-page</h1>
           </div>
-          <div>
-            <p>The Retrieval Engine embodies the essence of <strong>Search</strong>.</p>
+          <div class="mod-footer">
+            <div class="embedded-backlinks" style="display: none;"></div>
           </div>
-          <div>
-            <p>Having run the <a class="internal-link" data-href="../Processor.md" href="docs/processor.html" target="_self" rel="noopener">Processor</a>, we're now equipped with an array of resources - BM25 scores, PageRank scores, inverse index, and more. Yet, the key question is, how do we execute a search when a user inputs a query and hits 'Enter'? How can we convert complex data relationships into digestible search results? This is precisely where the Retrieval Engine steps in.</p>
-          </div>
-          <div>
-            <p>For versatility and optimization, we have incorporated two distinct retrieval models within the engine - the <strong>Boolean Retrieval Model</strong> and the <strong>Vector Retrieval Model</strong>. These models can independently and seamlessly conduct their operations, ensuring a smooth user experience.</p>
-          </div>
-          <div>
-            <h2 data-heading="Single Token Search" id="Single_Token_Search" style="display: flex;">
-              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
-                  <path d="M3 8L12 17L21 8"></path>
-                </svg></div>Single Token Search
-            </h2>
-          </div>
-          <div>
-            <p>Both our retrieval models - Boolean and Vector - operate <strong>identically</strong> when processing single query tokens.</p>
-          </div>
-          <div>
-            <p>Thanks to the Inverted Index which can be indexed by tokens, we can promptly locate all the documents that contain the specific keyword, along with their respective BM25 and PageRank scores. Subsequently, the sorted documents based on the scores can be returned to provide highly relevant results.</p>
-          </div>
-          <div>
-            <p>We use a simple linear combination strategy to merge the BM25 and PageRank scores: <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D440 TEX-I"></mjx-c></mjx-mi><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c35"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D443 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub></mjx-math></mjx-container></span>. This approach is feasible because the Processor has already normalized these scores.</p>
-          </div>
-          <div>
-            <p>Consequently, single token searches are typically rapid and accurate. It is the <strong>most recommended usage</strong> of the SSO search engine.</p>
-          </div>
-          <div>
-            <h2 data-heading="Boolean Retrieval" id="Boolean_Retrieval" style="display: flex;">
-              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
-                  <path d="M3 8L12 17L21 8"></path>
-                </svg></div>Boolean Retrieval
-            </h2>
-          </div>
-          <div>
-            <h2 data-heading="Vector Retrieval" id="Vector_Retrieval" style="display: flex;">
-              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
-                  <path d="M3 8L12 17L21 8"></path>
-                </svg></div>Vector Retrieval
-            </h2>
-          </div>
-          <div>
-            <p>In contrast to Boolean Retrieval, Vector Retrieval contemplates a broader range of search candidates. If we visualize our Inverted Index as a matrix, each document can be conveniently represented by a vector. The vector's length is the total number of unique tokens we have, and each vector element's value is the corresponding BM25 score between the document and the token.</p>
-          </div>
-          <div>
-            <p>We calculate the <strong>cosine similarity</strong> between document embedding vectors to easily determine the relationship between any two documents. So, in vector retrieval, <strong>we interpret the input query as a short document</strong>, and compare it with all other documents to find the most similar ones.</p>
-          </div>
-          <div>
-            <p>However, a limitation of vector retrieval is that the input order of words in the query doesn't impact the results, since they will generate the same embedding vector. (This drawback can be prevented from using dense retrieval model since transformer is very sensitive to order of tokens)</p>
-          </div>
-          <div>
-            <p>Furthermore, vector retrieval is notably slower than Boolean retrieval, as it encompasses a larger search scope (but not the entire corpus, as two vectors will be perpendicular if they don't share common tokens).</p>
-          </div>
-          <div>
-            <p><strong>For optimizing similarity search in high-dimensional vector spaces, Kaiyuan Lou and Yizhou Bi conducted some research and proposed an optimization using Hierarchical Clustering.</strong> </p>
-          </div>
-          <div>
-            <p>Although it hasn't been integrated into SSO, you can still see their implementation <strong><a data-tooltip-position="top" aria-label="https://github.com/loeeeee/DensePassageRetrieval" rel="noopener" class="external-link" href="https://github.com/loeeeee/DensePassageRetrieval" target="_blank">here</a></strong> and report/benchmark <strong><a class="internal-link" data-href="./EDRFHC.html" href="docs/edrfhc.html" target="_self" rel="noopener">here</a></strong>.</p>
-          </div>
-          <div>
-            <h2 data-heading="Why I Can't Search an Entire Sentence" id="Why_I_Can't_Search_an_Entire_Sentence" style="display: flex;">
-              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
-                  <path d="M3 8L12 17L21 8"></path>
-                </svg></div>Why I Can't Search an Entire Sentence
-            </h2>
-          </div>
-          <div>
-            <p>The major distinction between <strong>Sparse Retrieval</strong> (like SSO) and <strong>Dense Retrieval</strong> (like Google) underlies this issue. Sparse retrieval models can't comprehend the natural language inputs from users, whereas dense retrieval models, containing <strong>LLMs</strong> (Language Learning Models), can.</p>
-          </div>
-          <div>
-            <p>Dense retrieval models employ vector retrieval, much like sparse retrieval models we have. However, instead of using a highly sparse embedding matrix, dense retrieval employs LLMs (primarily <strong>BERT</strong>) to create compact, dense embeddings for each document. With appropriate fine-tuning, the BERT encoder can understand human languages, enabling natural language searches on platforms like Google.</p>
-          </div>
-          <div>
-            <p>Integrating a dense retrieval model into SSO is challenging as it necessitates additional training of LLMs. Furthermore, we would need to transition our database from a traditional format to a vector database for efficient vector similarity searches. (the search space truly expand to the whole corpus in dense retrieval) Therefore, at this stage, we are not considering the addition of dense retrieval.</p>
-          </div>
-          <div class="mod-footer"></div>
         </div>
       </div>
     </div>
@@ -1294,29 +1215,8 @@
           <div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div>
           <div class="tree-scroll-area">
             <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Retrieval_Engine"><span class="tree-item-title">Retrieval Engine</span></a></div>
-              <div class="tree-item-children">
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Overview"><span class="tree-item-title">Overview</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Single_Token_Search"><span class="tree-item-title">Single Token Search</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Boolean_Retrieval"><span class="tree-item-title">Boolean Retrieval</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Vector_Retrieval"><span class="tree-item-title">Vector Retrieval</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Why_I_Can't_Search_an_Entire_Sentence"><span class="tree-item-title">Why I Can't Search an Entire Sentence</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-              </div>
+              <div class="tree-item-contents"><a class="tree-item-link" href="#sso-page"><span class="tree-item-title">sso-page</span></a></div>
+              <div class="tree-item-children"></div>
             </div>
           </div>
         </div>

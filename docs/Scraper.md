@@ -14,4 +14,4 @@ Our approach to website crawling is centered on **Domain Names**. Our main focus
 
 However, we don't want to limit our knowledge base solely to DKU's domain. To that end, we also crawl the **outer ring**. The outer ring refers to all webpages that are directly linked from DKU's internal pages. Currently, **our ring depth is set to 1**, which means we don't crawl further into pages that are linked by these outer ring pages.
 
-Nonetheless, our scraper supports multiple starting points and domains. If there are other webpages or domains you believe would be valuable for us to crawl beyond just DKU's official pages, please **[reach out to us](./IndexGuide.html)**. We are open to expanding our crawling strategy to include these additional domains and their respective outer rings.
+Nonetheless, our scraper supports multiple starting points and domains. If there are other webpages or domains you believe would be valuable for us to crawl beyond just DKU's official pages, please **[reach out to us](./IndexGuide.md)**. We are open to expanding our crawling strategy to include these additional domains and their respective outer rings.

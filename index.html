@@ -1,809 +1,368 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
 <head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-<link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
-.mac-os-11 { --title-bar-height:28px; }
-html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-h1, h2, h3, h4, h5 { white-space: pre-wrap; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
-iframe { margin: auto; }
-a.url { word-break: break-all; }
-a:active, a:hover { outline: 0px; }
-.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
-#write.first-line-indent p { text-indent: 2em; }
-#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
-#write.first-line-indent li { margin-left: 2em; }
-.for-image #write { padding-left: 8px; padding-right: 8px; }
-body.typora-export { padding-left: 30px; padding-right: 30px; }
-.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
-.typora-export .task-list-item input { pointer-events: none; }
-@media screen and (max-width: 500px) {
-  body.typora-export { padding-left: 0px; padding-right: 0px; }
-  #write { padding-left: 20px; padding-right: 20px; }
-}
-#write li > figure:last-child { margin-bottom: 0.5rem; }
-#write ol, #write ul { position: relative; }
-img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
-button, input, select, textarea { color: inherit; font: inherit; }
-input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
-*, ::after, ::before { box-sizing: border-box; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
-p { line-height: inherit; }
-h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
-p { orphans: 4; }
-h1 { font-size: 2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.6rem; }
-h4 { font-size: 1.4rem; }
-h5 { font-size: 1.2rem; }
-h6 { font-size: 1rem; }
-.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
-.hidden { display: none; }
-.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
-a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
-sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
-#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
-figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
-figure > table { margin: 0px; }
-thead, tr { break-inside: avoid; break-after: auto; }
-thead { display: table-header-group; }
-table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
-table.md-table td { min-width: 32px; }
-.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
-.CodeMirror-linenumber { user-select: none; }
-.CodeMirror { text-align: left; }
-.CodeMirror-placeholder { opacity: 0.3; }
-.CodeMirror pre { padding: 0px 4px; }
-.CodeMirror-lines { padding: 0px; }
-div.hr:focus { cursor: none; }
-#write pre { white-space: pre-wrap; }
-#write.fences-no-line-wrapping pre { white-space: pre; }
-#write pre.ty-contain-cm { white-space: normal; }
-.CodeMirror-gutters { margin-right: 4px; }
-.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
-.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
-#write .md-fences.mock-cm { white-space: pre-wrap; }
-.md-fences.md-fences-with-lineno { padding-left: 0px; }
-#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
-.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
-.CodeMirror-line, twitterwidget { break-inside: avoid; }
-svg { break-inside: avoid; }
-.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
-.footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
-li div { padding-top: 0px; }
-blockquote { margin: 1rem 0px; }
-li .mathjax-block, li p { margin: 0.5rem 0px; }
-li blockquote { margin: 1rem 0px; }
-li { margin: 0px; position: relative; }
-blockquote > :last-child { margin-bottom: 0px; }
-blockquote > :first-child, li > :first-child { margin-top: 0px; }
-.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
-#write .footnote-line { white-space: pre-wrap; }
-@media print {
-  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
-  .typora-export * { -webkit-print-color-adjust: exact; }
-  .typora-export #write { break-after: avoid; }
-  .typora-export #write::after { height: 0px; }
-  .is-mac table { break-inside: avoid; }
-  #write > p:nth-child(1) { margin-top: 0px; }
-  .typora-export-show-outline .typora-export-sidebar { display: none; }
-  figure { overflow-x: visible; }
-}
-.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
-a img, img a { cursor: pointer; }
-pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
-p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
-#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
-p > .md-image:only-child { display: inline-block; width: 100%; }
-#write .MathJax_Display { margin: 0.8em 0px 0px; }
-.md-math-block { width: 100%; }
-.md-math-block:not(:empty)::after { display: none; }
-.MathJax_ref { fill: currentcolor; }
-[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
-.md-task-list-item { position: relative; list-style-type: none; }
-.task-list-item.md-task-list-item { padding-left: 0px; }
-.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
-.math { font-size: 1rem; }
-.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
-.md-toc-content { position: relative; margin-left: 0px; }
-.md-toc-content::after, .md-toc::after { display: none; }
-.md-toc-item { display: block; color: rgb(65, 131, 196); }
-.md-toc-item a { text-decoration: none; }
-.md-toc-inner:hover { text-decoration: underline; }
-.md-toc-inner { display: inline-block; cursor: pointer; }
-.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
-.md-toc-h2 .md-toc-inner { margin-left: 2em; }
-.md-toc-h3 .md-toc-inner { margin-left: 4em; }
-.md-toc-h4 .md-toc-inner { margin-left: 6em; }
-.md-toc-h5 .md-toc-inner { margin-left: 8em; }
-.md-toc-h6 .md-toc-inner { margin-left: 10em; }
-@media screen and (max-width: 48em) {
-  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
-  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
-  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
-  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
-}
-a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
-.footnote-line a:not(.reversefootnote) { color: inherit; }
-.reversefootnote { font-family: ui-monospace, sans-serif; }
-.md-attr { display: none; }
-.md-fn-count::after { content: "."; }
-code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
-.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
-code { text-align: left; vertical-align: initial; }
-a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
-.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
-.md-diagram-panel > svg { max-width: 100%; }
-[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
-[lang="mermaid"] .node text { font-size: 1rem; }
-table tr th { border-bottom: 0px; }
-video { max-width: 100%; display: block; margin: 0px auto; }
-iframe { max-width: 100%; width: 100%; border: none; }
-.highlight td, .highlight tr { border: 0px; }
-mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
-.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
-.md-expand mark .md-meta { opacity: 0.3 !important; }
-mark .md-meta { color: rgb(0, 0, 0); }
-@media print {
-  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
-}
-.md-diagram-panel .messageText { stroke: none !important; }
-.md-diagram-panel .start-state { fill: var(--node-fill); }
-.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
-.md-fences.md-fences-math { font-size: 1em; }
-.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
-.md-fences-advanced:not(.md-focus) { background: inherit; }
-.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
-.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
-.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
-.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
-@media screen and (max-width: 1024px) {
-  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
-}
-@media screen and (max-width: 800px) {
-  .typora-export-sidebar { display: none; }
-}
-.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
-.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
-.outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
-.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
-.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
-.outline-expander:hover::before { content: ""; }
-.outline-h1 > .outline-item { padding-left: 0px; }
-.outline-h2 > .outline-item { padding-left: 1em; }
-.outline-h3 > .outline-item { padding-left: 2em; }
-.outline-h4 > .outline-item { padding-left: 3em; }
-.outline-h5 > .outline-item { padding-left: 4em; }
-.outline-h6 > .outline-item { padding-left: 5em; }
-.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
-.outline-label:hover { text-decoration: underline; }
-.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
-.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
-.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
-.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
-.outline-children { display: none; }
-.info-panel-tab-wrapper { display: none; }
-.outline-item-open > .outline-children { display: block; }
-.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
-.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
-.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
-.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
-.typora-export-collapse-outline .outline-children { display: none; }
-.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
-.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
-.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
-.md-inline-math-container mjx-container { zoom: 0.95; }
-mjx-container { break-inside: avoid; }
+  <title>index</title>
+  <base href="./">
+  <meta id="root-path" root-path="./">
+
+  <link rel="icon" sizes="96x96" href="https://publish-01.obsidian.md/access/f786db9fac45774fa4f0d8112e232d67/favicon-96x96.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+  <meta charset="UTF-8">
+  <script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
+
+  <link rel="stylesheet" href="lib/styles/obsidian-styles.css">
+  <link rel="stylesheet" href="lib/styles/theme.css">
+  <link rel="stylesheet" href="lib/styles/plugin-styles.css">
+  <link rel="stylesheet" href="lib/styles/snippets.css">
+  <style> </style>
+
+
+  <!-- Graph View Data -->
+  <script>
+    let nodes = {
+      "nodeCount": 8,
+      "linkCount": 7,
+      "radii": [7, 6, 6, 6, 6, 4.75, 3, 3],
+      "labels": ["index", "Scraper", "Retrieval", "Processor", "IndexGuide", "History", "README", "DevLog"],
+      "paths": ["index.html", "docs/scraper.html", "docs/retrieval.html", "docs/processor.html", "docs/indexguide.html", "docs/history.html", "readme.html", "docs/devlog.html"],
+      "linkSources": [0, 0, 0, 0, 0, 2, 1],
+      "linkTargets": [2, 1, 3, 5, 4, 3, 4]
+    };
+    let attractionForce = 1;
+    let linkLength = 10;
+    let repulsionForce = 150;
+    let centralForce = 3;
+    let edgePruning = 100;
+  </script>
+
+  <script type="module" src="lib/scripts/graph_view.js"></script>
+
+  <script src="lib/scripts/graph_wasm.js"></script>
+
+  <script src="lib/scripts/tinycolor.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js" integrity="sha512-Ch/O6kL8BqUwAfCF7Ie5SX1Hin+BJgYH4pNjRqXdTEqMsis1TUYg+j6nnI9uduPjGaj7DN4UKCZgpvoExt6dkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="lib/scripts/webpage.js"></script>
 
-
-/* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
-
-@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
-
-/* =========== */
-
-/* pt-serif-regular - latin */
-/* pt-serif-italic - latin */
-/* pt-serif-700 - latin */
-/* pt-serif-700italic - latin */
-:root {
-	--active-file-bg-color: #dadada;
-	--active-file-bg-color: rgba(32, 43, 51, 0.63);
-	--active-file-text-color: white;
-	--bg-color: #f3f2ee;
-	--text-color: #1f0909;
-	--control-text-color: #444;
-	--rawblock-edit-panel-bd: #e5e5e5;
-
-	--select-text-bg-color: rgba(32, 43, 51, 0.63);
-  --select-text-font-color: white;
-}
-
-pre {
-	--select-text-bg-color: #36284e;
-	--select-text-font-color: #fff;
-}
-
-html {
-	font-size: 16px;
-	-webkit-font-smoothing: antialiased;
-}
-
-html, body {
-	background-color: #f3f2ee;
-	font-family: "PT Serif", 'Times New Roman', Times, serif;
-	color: #1f0909;
-	line-height: 1.5em;
-}
-
-/*#write {
-	overflow-x: auto;
-    max-width: initial;
-	padding-left: calc(50% - 17em);
-    padding-right: calc(50% - 17em);
-}
-
-@media (max-width: 36em) {
- 	#write {
- 		padding-left: 1em;
-    	padding-right: 1em;
- 	}
-}*/
-
-#write {
-	max-width: 40em;
-}
-
-@media only screen and (min-width: 1400px) {
-	#write {
-			max-width: 914px;
-	}
-}
-
-ol li {
-	list-style-type: decimal;
-	list-style-position: outside;
-}
-ul li {
-	list-style-type: disc;
-	list-style-position: outside;
-}
-
-ol,
-ul {
-	list-style: none;
-}
-
-blockquote,
-q {
-	quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-/* styles */
-
-/* ====== */
-
-/* headings */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: bold;
-}
-h1 {
-	font-size: 1.875em;
-	/*30 / 16*/
-	line-height: 1.6em;
-	/* 48 / 30*/
-	margin-top: 2em;
-}
-h2,
-h3 {
-	font-size: 1.3125em;
-	/*21 / 16*/
-	line-height: 1.15;
-	/*24 / 21*/
-	margin-top: 2.285714em;
-	/*48 / 21*/
-	margin-bottom: 1.15em;
-	/*24 / 21*/
-}
-h3 {
-	font-weight: normal;
-}
-h4 {
-	font-size: 1.125em;
-	/*18 / 16*/
-	margin-top: 2.67em;
-	/*48 / 18*/
-}
-h5,
-h6 {
-	font-size: 1em;
-	/*16*/
-}
-h1 {
-	border-bottom: 1px solid;
-	margin-bottom: 1.875em;
-	padding-bottom: 0.8125em;
-}
-/* links */
-
-a {
-	text-decoration: none;
-	color: #065588;
-}
-a:hover,
-a:active {
-	text-decoration: underline;
-}
-/* block spacing */
-
-p,
-blockquote,
-.md-fences {
-	margin-bottom: 1.5em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin-bottom: 1.5em;
-}
-/* blockquote */
-
-blockquote {
-	font-style: italic;
-	border-left: 5px solid;
-	margin-left: 2em;
-	padding-left: 1em;
-}
-/* lists */
-
-ul,
-ol {
-	margin: 0 0 1.5em 1.5em;
-}
-/* tables */
-.md-meta,.md-before, .md-after {
-	color:#999;
-}
-
-table {
-	margin-bottom: 1.5em;
-	/*24 / 16*/
-	font-size: 1em;
-	/* width: 100%; */
-}
-thead th,
-tfoot th {
-	padding: .25em .25em .25em .4em;
-	text-transform: uppercase;
-}
-th {
-	text-align: left;
-}
-td {
-	vertical-align: top;
-	padding: .25em .25em .25em .4em;
-}
-
-code,
-.md-fences {
-	background-color: #dadada;
-}
-
-code {
-	padding-left: 2px;
-	padding-right: 2px;
-}
-
-.md-fences {
-	margin-left: 2em;
-	margin-bottom: 3em;
-	padding-left: 1ch;
-	padding-right: 1ch;
-}
-
-pre,
-code,
-tt {
-	font-size: .875em;
-	line-height: 1.714285em;
-}
-/* some fixes */
-
-h1 {
-	line-height: 1.3em;
-	font-weight: normal;
-	margin-bottom: 0.5em;
-}
-
-p + ul,
-p + ol{
-	margin-top: .5em;
-}
-
-h3 + ul,
-h4 + ul,
-h5 + ul,
-h6 + ul,
-h3 + ol,
-h4 + ol,
-h5 + ol,
-h6 + ol {
-	margin-top: .5em;
-}
-
-li > ul,
-li > ol {
-	margin-top: inherit;
-	margin-bottom: 0;
-}
-
-li ol>li {
-	list-style-type: lower-alpha;
-}
-
-li li ol>li{
-	list-style-type: lower-roman;
-}
-
-h2,
-h3 {
-	margin-bottom: .75em;
-}
-hr {
-	border-top: none;
-	border-right: none;
-	border-bottom: 1px solid;
-	border-left: none;
-}
-h1 {
-	border-color: #c5c5c5;
-}
-blockquote {
-	border-color: #bababa;
-	color: #656565;
-}
-
-blockquote ul,
-blockquote ol {
-	margin-left:0;
-}
-
-.ty-table-edit {
-	background-color: transparent;
-}
-thead {
-	background-color: #dadada;
-}
-tr:nth-child(even) {
-	background: #e8e7e7;
-}
-hr {
-	border-color: #c5c5c5;
-}
-.task-list{
-	padding-left: 1rem;
-}
-
-.md-task-list-item {
-	padding-left: 1.5rem;
-	list-style-type: none;
-}
-
-.md-task-list-item > input:before {
-	content: '\221A';
-	display: inline-block;
-	width: 1.25rem;
-  	height: 1.6rem;
-	vertical-align: middle;
-	text-align: center;
-	color: #ddd;
-	background-color: #F3F2EE;
-}
-
-.md-task-list-item > input:checked:before,
-.md-task-list-item > input[checked]:before{
-	color: inherit;
-}
-
-#write pre.md-meta-block {
-	min-height: 1.875rem;
-	color: #555;
-	border: 0px;
-	background: transparent;
-	margin-top: -4px;
-	margin-left: 1em;
-	margin-top: 1em;
-}
-
-.md-image>.md-meta {
-	color: #9B5146;
-}
-
-.md-image>.md-meta{
-	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
-}
-
-
-#write>h3.md-focus:before{
-	left: -1.5rem;
-	color:#999;
-	border-color:#999;
-}
-#write>h4.md-focus:before{
-	left: -1.5rem;
-	top: .25rem;
-	color:#999;
-	border-color:#999;
-}
-#write>h5.md-focus:before{
-	left: -1.5rem;
-	top: .0.3125rem;
-	color:#999;
-	border-color:#999;
-}
-#write>h6.md-focus:before{
-	left: -1.5rem;
-	top: 0.3125rem;
-	color:#999;
-	border-color:#999;
-}
-
-.md-toc:focus .md-toc-content{
-	margin-top: 19px;
-}
-
-.md-toc-content:empty:before{
-	color: #065588;
-}
-.md-toc-item {
-	color: #065588;
-}
-#write div.md-toc-tooltip {
-	background-color: #f3f2ee;
-}
-
-#typora-sidebar {
-	background-color: #f3f2ee;
-	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
-  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
-}
-
-.pin-outline #typora-sidebar {
-	background: inherit;
-	box-shadow: none;
-	border-right: 1px dashed;
-}
-
-.pin-outline #typora-sidebar:hover .outline-title-wrapper {
-	border-left:1px dashed;
-}
-
-.outline-item:hover {
-  background-color: #dadada;
-  border-left: 28px solid #dadada;
-  border-right: 18px solid #dadada;
-}
-
-.typora-node .outline-item:hover {
-  	border-right: 28px solid #dadada;
-}
-
-.outline-expander:before {
-  content: "\f0da";
-  font-family: FontAwesome;
-  font-size:14px;
-  top: 1px;
-}
-
-.outline-expander:hover:before,
-.outline-item-open>.outline-item>.outline-expander:before {
-  content: "\f0d7";
-}
-
-.modal-content {
-	background-color: #f3f2ee;
-}
-
-.auto-suggest-container ul li {
-	list-style-type: none;
-}
-
-/** UI for electron */
-
-.megamenu-menu,
-#top-titlebar, #top-titlebar *,
-.megamenu-content {
-	background: #f3f2ee;
-	color: #1f0909;
-}
-
-.megamenu-menu-header {
-	border-bottom: 1px dashed #202B33;
-}
-
-.megamenu-menu {
-	box-shadow: none;
-	border-right: 1px dashed;
-}
-
-header, .context-menu, .megamenu-content, footer {
-	font-family: "PT Serif", 'Times New Roman', Times, serif;
-    color: #1f0909;
-}
-
-#megamenu-back-btn {
-	color: #1f0909;
-	border-color: #1f0909;
-}
-
-.megamenu-menu-header #megamenu-menu-header-title:before {
-	color: #1f0909;
-}
-
-.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
-	color: inherit;
-	background-color: #e8e7df;
-}
-
-.long-btn:hover {
-	background-color: #e8e7df;
-}
-
-#recent-file-panel tbody tr:nth-child(2n-1) {
-    background-color: transparent !important;
-}
-
-.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
-    color: inherit;
-}
-
-.megamenu-menu-panel .btn {
-	background-color: #D2D1D1;
-}
-
-.btn-default {
-	background-color: transparent;
-}
-
-.typora-sourceview-on #toggle-sourceview-btn,
-.ty-show-word-count #footer-word-count {
-	background: #c7c5c5;
-}
-
-#typora-quick-open {
-    background-color: inherit;
-}
-
-.md-diagram-panel {
-	margin-top: 8px;
-}
-
-.file-list-item-file-name {
-	font-weight: initial;
-}
-
-.file-list-item-summary {
-	opacity: 1;
-}
-
-.file-list-item {
-	color: #777;
-}
-
-.file-list-item.active {
-	background-color: inherit;
-	color: black;
-}
-
-.ty-side-sort-btn.active {
-	background-color: inherit;
-}
-
-.file-list-item.active .file-list-item-file-name  {
-	font-weight: bold;
-}
-
-.file-list-item{
-    opacity:1 !important;
-}
-
-.file-library-node.active>.file-node-background{
-	background-color: rgba(32, 43, 51, 0.63);
-	background-color: var(--active-file-bg-color);
-}
-
-.file-tree-node.active>.file-node-content{
-	color: white;
-	color: var(--active-file-text-color);
-}
-
-.md-task-list-item>input {
-	margin-left: -1.7em;
-	margin-top: calc(1rem - 12px);
-	-webkit-appearance: button;
-}
-
-input {
-	border: 1px solid #aaa;
-}
-
-.megamenu-menu-header #megamenu-menu-header-title,
-.megamenu-menu-header:hover, 
-.megamenu-menu-header:focus {
-	color: inherit;
-}
-
-.dropdown-menu .divider {
-	border-color: #e5e5e5;
-	opacity: 1;
-}
-
-/* https://github.com/typora/typora-issues/issues/2046 */
-.os-windows-7 strong,
-.os-windows-7 strong  {
-	font-weight: 760;
-}
-
-.ty-preferences .btn-default {
-	background: transparent;
-}
-
-.ty-preferences .window-header {
-	border-bottom: 1px dashed #202B33;
-	box-shadow: none;
-}
-
-#sidebar-loading-template, #sidebar-loading-template.file-list-item {
-	color: #777;
-}
-
-.searchpanel-search-option-btn.active {
-	background: #777;
-	color: white;
-}
-
-.export-detail, .light .export-detail, 
-.light .export-item.active, 
-.light .export-items-list-control {
-	background: #e0e0e0;
-	border-radius: 2px;
-	font-weight: 700;
-	color: inherit
-}
-
-
-</style><title>index</title>
 </head>
-<body class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
-<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#sso-search-so">SSO: Search-So</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#what-is-sso">What is SSO</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#getting-started-with-sso">Getting Started with SSO</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#unveiling-the-sso-mechanism">Unveiling the SSO Mechanism</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#our-data-sources">Our Data Sources</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#dku-wiki">DKU-Wiki</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#cant-find-what-youre-looking-for">Can't Find What You're Looking For?</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#unable-to-connect">Unable to Connect?</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#report-bugs">Report Bugs</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#the-sso-team">The SSO Team</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#doc-contents">Doc Contents</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=''><h1 id='sso-search-so'><span>SSO: Search-So</span></h1><p><span>Welcome to the official digital home of SSO.</span></p><p><span>Discover everything you need to know about SSO right here.</span></p><h2 id='what-is-sso'><span>What is SSO</span></h2><p><span>SSO (Search So) is a purpose-built search engine designed with a specific focus on catering to the needs of mid-sized organizations like DKU. We excel in delivering swift, high-quality search results.</span></p><p><span>SSO is a fully automated, end-to-end search solution, primarily developed in Python. This comprehensive system encompasses a robust </span><strong><span>web scraper</span></strong><span>, efficient </span><strong><span>data processor</span></strong><span>, and user-friendly </span><strong><span>retrieval engine</span></strong><span>, all integrated seamlessly for an effortless user experience.</span></p><h2 id='getting-started-with-sso'><span>Getting Started with SSO</span></h2><p><span>Utilizing SSO is as straightforward as operating any other search engine. Simply input your query into the search bar and press enter to initiate your search journey.</span></p><p><img src="./imgs/index.gif" alt="GIF Example" style="zoom:70%;" /></p><p><span>We support search for </span><strong><span>English</span></strong><span> and </span><strong><span>Chinese</span></strong><span>, but not other languages (such as C++) now.</span></p><p><strong><span>NOTICE</span></strong><span>: </span><em><span>One distinct feature of SSO compared to Google is that </span><strong><span>we don&#39;t support natural language input queries</span></strong><span> (for example, &quot;how to set up DKU vpn?&quot;). Instead, it is more effective to search for a single term like &quot;VPN&quot;. This approach is directly tied to our underlying algorithm, which isn&#39;t optimized for natural language processing. For a detailed explanation, please refer to our </span><a href='./docs/Retrieval.html'><span>Retrieval Engine</span></a><span> section.</span></em></p><h2 id='unveiling-the-sso-mechanism'><span>Unveiling the SSO Mechanism</span></h2><p><span>As alluded to earlier, the SSO is powered by three primary components - the </span><strong><span>Scraper</span></strong><span>, </span><strong><span>Data Processor</span></strong><span>, and </span><strong><span>Retrieval Engine</span></strong><span>.</span></p><ul><li><p><a href='./docs/Scraper.html'><span>Scraper</span></a><span>: The Scraper is our data collection tool, meticulously extracting raw HTML from the web. This ensures no potential information is lost during the data collection process.</span></p></li><li><p><a href='./docs/Processor.html'><span>Data Processor</span></a><span>: The Data Processor takes on the vital role of processing the raw information gathered by the Scraper. It culminates this process by generating an Inverted Index, accompanied by BM25 scores and PageRank.</span></p></li><li><p><a href='./docs/Retrieval.html'><span>Retrieval Engine</span></a><span>: The Retrieval Engine comes into play when users engage with the search button. It seamlessly performs data retrieval from the database, ensuring accurate results are delivered swiftly.</span></p></li></ul><p><span>What we&#39;ve provided here is a high-level overview of these integral parts. For a more detailed understanding, including insights into the algorithms and strategies they employ, and their implementation process, we invite you to visit their respective pages. If you&#39;re intrigued by the inner workings of our system, these pages will provide a deeper dive into their functionality.</span></p><h2 id='our-data-sources'><span>Our Data Sources</span></h2><p><span>Our data is conscientiously gathered from public websites, with a significant portion originating from </span><a href='https://dukekunshan.edu.cn/'><span>DKU&#39;s official website</span></a><span> and its affiliated sites. These associated sites, linked by DKU&#39;s web pages, offer us the opportunity to assimilate a broader range of information from public spheres such as Twitter and personal blogs. However, please note that currently, our focus is on information pertinent to DKU. If you&#39;re looking to find information unrelated to DKU, for instance, how to play </span><a href='https://ys.mihoyo.com/'><span>Genshin Impact</span></a><span>, you may not find it in our SSO database.</span></p><p><span>When we refer to &quot;public websites&quot;, we&#39;re emphasizing that our data mining is strictly confined to publicly accessible information. Rest easy, </span><strong><span>we&#39;re not privy to any confidential data from DKU such as details in the DKU hub or your records of misconduct</span></strong><span> (hope you don&#39;t have one). Your privacy is safe with us!</span></p><p><span>To ensure relevance and currency, </span><strong><span>SSO updates its database every midnight</span></strong><span>. This involves the Scraper revisiting all websites for any new data, while the Processor subsequently updates our information bank.</span></p><p><span>While this daily update allows us to maintain a </span><a href='./docs/History.html'><span>historical data repository</span></a><span>, </span><strong><span>we only display search results with currently available information</span></strong><span>. This means, even if a webpage was valid in the past, it won&#39;t appear in your search results if it&#39;s no longer accessible. Our primary goal is to provide you with the most accurate and up-to-date information.</span></p><h2 id='dku-wiki'><span>DKU-Wiki</span></h2><p><a href='http://hun.colab.dukekunshan.edu.cn:8000/#/indexing/'><span>DKU-Wiki</span></a><span> is the sibling project of SSO, serving as a collaborative platform where individuals can contribute their unique insights, and </span><strong><span>they are searchable on SSO.</span></strong><span> You can craft a wiki for various topics, including majors, courses, events, or notable individuals - all these contents are easily accessible via SSO!</span></p><p><span>We acknowledge that SSO may not encompass all information as it is primarily web-focused, potentially missing out on events or happenings on campus that aren&#39;t shared online. DKU-Wiki fills this gap, providing an opportunity for you to share the stories, experiences, and insights you wish to disseminate. We particularly encourage sharing of experiences and recommendations regarding majors and courses, as detailed course information might not be readily available on the website.</span></p><p><span>We invite you to explore DKU-Wiki and begin contributing! As a fledgling project, we&#39;re eagerly looking for passionate contributors.  Every piece of knowledge shared enriches our community and furthers our collective learning.</span></p><h2 id='cant-find-what-youre-looking-for'><span>Can&#39;t Find What You&#39;re Looking For?</span></h2><p><span>Our apologies if your search didn&#39;t yield the desired results. Yet, we consider such moments as opportunities for growth! </span></p><p><span>First, make sure you didn&#39;t search </span><strong><span>long sentences</span></strong><span>, the capability for understanding natural language input is directly relate to our algorithm, you can refer to </span><a href='./docs/Retrieval.html'><span>Retrieval Engine</span></a><span> for detailed explanation.</span></p><p><span>Also, please remember, as DKU&#39;s website is a relatively small digital platform, </span><strong><span>it holds limited information</span></strong><span>. While we strive for completeness, our current focus on </span><strong><span>DKU-only</span></strong><span> content means we can&#39;t match the vast range of a search engine like Google.</span></p><p><span>But there&#39;s still a large possibility that we might have overlooked some important websites in our current </span><a href='./docs/Scraper.html'><span>crawling strategy</span></a><span>. If you&#39;re aware of any such missed sites, we&#39;d be grateful to know!</span></p><p><span>Simply </span><strong><span>want your personal website to be searchable?</span></strong><span> We&#39;re delighted to facilitate that! Please follow </span><strong><a href='./docs/IndexGuide.html'><span>this guide</span></a></strong><span> to attract more visitors to your website. </span></p><p><span>Additionally, if you&#39;ve stumbled upon intriguing locations or sources that you think interesting, please don&#39;t hesitate to let us know! As long as the content is relevant to DKU, we would be more than happy to make it searchable within our system. Your active participation aids us in continually improving and expanding the breadth of our service.</span></p><h2 id='unable-to-connect'><span>Unable to Connect?</span></h2><p><strong><span>Ensure you are connected to DKU&#39;s WiFi</span></strong><span>.</span></p><p><span>SSO, being primarily an internal search engine, operates on a server within the DKU LAN. If you are not on campus at the moment, you need to connect to DKU&#39;s proxy in order to access our server.</span></p><p><strong><span>Both the DKU Wiki and SSO run on the same server</span></strong><span>, implying that you need to be connected to the internal network to access the Wiki as well.</span></p><h2 id='report-bugs'><span>Report Bugs</span></h2><p><span>At present, SSO is in its beta stage, with numerous areas ripe for enhancement. We acknowledge that perfection can&#39;t be achieved overnight; therefore, we&#39;re committed to making steady progress with every step.</span></p><p><span>If you encounter any bugs or have suggestions for our project, please feel welcome to post an issue on our </span><strong><a href='https://github.com/midstreeeam/sso-page/issues'><span>bug report page</span></a></strong><span>. Your insight is highly valuable to us.</span></p><p><span>We strongly encourage and appreciate your suggestions as they play a pivotal role in shaping the future of SSO!</span></p><h2 id='the-sso-team'><span>The SSO Team</span></h2><ul><li><p><a href=''><span>Jiang Long</span></a><span>: DKU Senior Lecturer in Computer Science, supervisor of SSO project.</span></p></li><li><p><a href=''><span>Kaiyuan Lou</span></a><span>: DKU student, class of 2024, founder of SSO. He is responsible for structural design and implementation of processor, retrieval engine, and benchmark system.</span></p></li><li><p><a href=''><span>Loe Bi</span></a><span>: DKU student, class of 2024, key contributor. His primary responsibilities encompass the design of the database structure, webapp deployment, and automation. Additionally, he has played a crucial role in implementing the data processor and retrieval engine.</span></p></li><li><p><a href=''><span>Sichang He</span></a><span>: DKU student, class of 2024, key contributor. He designed and implemented the </span><a href='./docs/Scraper.html'><span>Scraper</span></a><span>, and he also contribute to front-end design.</span></p></li><li><p><a href=''><span>Beilong Tang</span></a><span>: DKU student, class of 2025, key contributor. He is responsible in design and implementation of </span><a href='http://hun.colab.dukekunshan.edu.cn:8000/#/indexing/'><span>DKU-Wiki</span></a><span>, and he also contribute to benchmark system and front-end.</span></p></li><li><p><a href=''><span>Echchabi Othmane</span></a><span> DKU student, class of 2025.  He offers idea for front-end improvements.</span></p></li><li><p><a href=''><span>Jay Shi</span></a><span>: DKU student, class of 2025. He is responsible for managing DII-relate tasks.</span></p></li></ul><h2 id='doc-contents'><span>Doc Contents</span></h2><ul><li><p><a href='#'><span>Homepage</span></a></p></li><li><p><a href='./docs/Scraper.html'><span>Scraper</span></a></p></li><li><p><a href='./docs/Processor.html'><span>Data Processor</span></a></p></li><li><p><a href='./docs/Retrieval.html'><span>Retrieval Engine</span></a></p></li><li><p><a href='./docs/History.html'><span>Historical Data</span></a></p></li><li><p><a href='./docs/IndexGuide.html'><span>Guide to Create Your Index</span></a></p></li><li><p><a href='./docs/DevLog.html'><span>Dev Log</span></a></p></li></ul></div></div>
 
-<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script></body>
+<body class="mod-windows is-frameless is-hidden-frameless obsidian-app show-inline-title show-view-header is-maximized theme-light" style="--zoom-factor:1; --font-text-size:16px; --line-width:50em; --line-width-adaptive:50em; --file-line-width:50em; --content-width:500em; --sidebar-width:25em; --collapse-arrow-size:0.4em; --tree-horizontal-spacing:1em; --tree-vertical-spacing:0.5em; --sidebar-margin:12px;">
+  <div class="webpage-container">
+    <div class="sidebar-left sidebar">
+      <div class="sidebar-content">
+        <div><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle">
+            <div class="toggle-background"></div>
+          </label></div>
+        <div class="tree-container file-tree mod-nav-indicator" data-depth="0">
+          <div class="tree-header"><span class="sidebar-section-header">sso-page</span><button class="clickable-icon collapse-tree-button is-collapsed"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div>
+          <div class="tree-scroll-area">
+            <div class="tree-item mod-tree-folder mod-collapsible is-collapsed" data-depth="1">
+              <div class="tree-item-contents">
+                <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div><a class="tree-item-link" href="docs"><span class="tree-item-title">docs</span></a>
+              </div>
+              <div class="tree-item-children">
+                <div class="tree-item mod-tree-file" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="docs/devlog.html"><span class="tree-item-title">DevLog</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-file" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="docs/history.html"><span class="tree-item-title">History</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-file" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="docs/indexguide.html"><span class="tree-item-title">IndexGuide</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-file" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="docs/processor.html"><span class="tree-item-title">Processor</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-file" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="docs/retrieval.html"><span class="tree-item-title">Retrieval</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-file" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="docs/scraper.html"><span class="tree-item-title">Scraper</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+              </div>
+            </div>
+            <div class="tree-item mod-tree-file" data-depth="1">
+              <div class="tree-item-contents"><a class="tree-item-link" href="index.html"><span class="tree-item-title">index</span></a></div>
+              <div class="tree-item-children"></div>
+            </div>
+            <div class="tree-item mod-tree-file" data-depth="1">
+              <div class="tree-item-contents"><a class="tree-item-link" href="readme.html"><span class="tree-item-title">README</span></a></div>
+              <div class="tree-item-children"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="document-container">
+      <div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings show-indentation-guide allow-fold-lists" tabindex="-1" style="tab-size: 4;">
+        <style id="MJX-CHTML-styles"></style>
+        <div class="markdown-preview-sizer markdown-preview-section" style="padding-bottom: ; padding-top: var(--file-margins); padding-right: var(--file-margins); padding-left: var(--file-margins); width: 100%; position: absolute;">
+          <div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+          <div class="mod-header"></div>
+          <div>
+            <h1 data-heading="SSO: Search-So" id="SSO:_Search-So">SSO: Search-So</h1>
+          </div>
+          <div>
+            <p>Welcome to the official digital home of SSO.</p>
+          </div>
+          <div>
+            <p>Discover everything you need to know about SSO right here.</p>
+          </div>
+          <div>
+            <h2 data-heading="What is SSO" id="What_is_SSO" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>What is SSO
+            </h2>
+          </div>
+          <div>
+            <p>SSO (Search So) is a purpose-built search engine designed with a specific focus on catering to the needs of mid-sized organizations like DKU. We excel in delivering swift, high-quality search results.</p>
+          </div>
+          <div>
+            <p>SSO is a fully automated, end-to-end search solution, primarily developed in Python. This comprehensive system encompasses a robust <strong>web scraper</strong>, efficient <strong>data processor</strong>, and user-friendly <strong>retrieval engine</strong>, all integrated seamlessly for an effortless user experience.</p>
+          </div>
+          <div>
+            <h2 data-heading="Getting Started with SSO" id="Getting_Started_with_SSO" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Getting Started with SSO
+            </h2>
+          </div>
+          <div>
+            <p>Utilizing SSO is as straightforward as operating any other search engine. Simply input your query into the search bar and press enter to initiate your search journey.</p>
+          </div>
+          <div><img style="zoom:70%;" alt="GIF Example" src="./imgs/index.gif" referrerpolicy="no-referrer"></div>
+          <div>
+            <p>We support search for <strong>English</strong> and <strong>Chinese</strong>, but not other languages (such as C++) now.</p>
+          </div>
+          <div>
+            <p><strong>NOTICE</strong>: <em>One distinct feature of SSO compared to Google is that <strong>we don't support natural language input queries</strong> (for example, "how to set up DKU vpn?"). Instead, it is more effective to search for a single term like "VPN". This approach is directly tied to our underlying algorithm, which isn't optimized for natural language processing. For a detailed explanation, please refer to our <a class="internal-link" data-href="./docs/Retrieval.md" href="docs/retrieval.html" target="_self" rel="noopener">Retrieval Engine</a> section.</em></p>
+          </div>
+          <div>
+            <h2 data-heading="Unveiling the SSO Mechanism" id="Unveiling_the_SSO_Mechanism" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Unveiling the SSO Mechanism
+            </h2>
+          </div>
+          <div>
+            <p>As alluded to earlier, the SSO is powered by three primary components - the <strong>Scraper</strong>, <strong>Data Processor</strong>, and <strong>Retrieval Engine</strong>.</p>
+          </div>
+          <div>
+            <ul class="has-list-bullet">
+              <li data-line="0">
+                <div class="list-bullet"></div><a class="internal-link" data-href="./docs/Scraper.md" href="docs/scraper.html" target="_self" rel="noopener">Scraper</a>: The Scraper is our data collection tool, meticulously extracting raw HTML from the web. This ensures no potential information is lost during the data collection process.
+              </li>
+              <li data-line="1">
+                <div class="list-bullet"></div><a class="internal-link" data-href="./docs/Processor.md" href="docs/processor.html" target="_self" rel="noopener">Data Processor</a>: The Data Processor takes on the vital role of processing the raw information gathered by the Scraper. It culminates this process by generating an Inverted Index, accompanied by BM25 scores and PageRank.
+              </li>
+              <li data-line="2">
+                <div class="list-bullet"></div><a class="internal-link" data-href="./docs/Retrieval.md" href="docs/retrieval.html" target="_self" rel="noopener">Retrieval Engine</a>: The Retrieval Engine comes into play when users engage with the search button. It seamlessly performs data retrieval from the database, ensuring accurate results are delivered swiftly.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p>What we've provided here is a high-level overview of these integral parts. For a more detailed understanding, including insights into the algorithms and strategies they employ, and their implementation process, we invite you to visit their respective pages. If you're intrigued by the inner workings of our system, these pages will provide a deeper dive into their functionality.</p>
+          </div>
+          <div>
+            <h2 data-heading="Our Data Sources" id="Our_Data_Sources" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Our Data Sources
+            </h2>
+          </div>
+          <div>
+            <p>Our data is conscientiously gathered from public websites, with a significant portion originating from <a data-tooltip-position="top" aria-label="https://dukekunshan.edu.cn/" rel="noopener" class="external-link" href="https://dukekunshan.edu.cn/" target="_blank">DKU's official website</a> and its affiliated sites. These associated sites, linked by DKU's web pages, offer us the opportunity to assimilate a broader range of information from public spheres such as Twitter and personal blogs. However, please note that currently, our focus is on information pertinent to DKU. If you're looking to find information unrelated to DKU, for instance, how to play <a data-tooltip-position="top" aria-label="https://ys.mihoyo.com/" rel="noopener" class="external-link" href="https://ys.mihoyo.com/" target="_blank">Genshin Impact</a>, you may not find it in our SSO database.</p>
+          </div>
+          <div>
+            <p>When we refer to "public websites", we're emphasizing that our data mining is strictly confined to publicly accessible information. Rest easy, <strong>we're not privy to any confidential data from DKU such as details in the DKU hub or your records of misconduct</strong> (hope you don't have one). Your privacy is safe with us!</p>
+          </div>
+          <div>
+            <p>To ensure relevance and currency, <strong>SSO updates its database every midnight</strong>. This involves the Scraper revisiting all websites for any new data, while the Processor subsequently updates our information bank.</p>
+          </div>
+          <div>
+            <p>While this daily update allows us to maintain a <a class="internal-link" data-href="./docs/History.md" href="docs/history.html" target="_self" rel="noopener">historical data repository</a>, <strong>we only display search results with currently available information</strong>. This means, even if a webpage was valid in the past, it won't appear in your search results if it's no longer accessible. Our primary goal is to provide you with the most accurate and up-to-date information.</p>
+          </div>
+          <div>
+            <h2 data-heading="DKU-Wiki" id="DKU-Wiki" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>DKU-Wiki
+            </h2>
+          </div>
+          <div>
+            <p><a data-tooltip-position="top" aria-label="http://hun.colab.dukekunshan.edu.cn:8000/#/indexing/" rel="noopener" class="external-link" href="http://hun.colab.dukekunshan.edu.cn:8000/#/indexing/" target="_blank">DKU-Wiki</a> is the sibling project of SSO, serving as a collaborative platform where individuals can contribute their unique insights, and <strong>they are searchable on SSO.</strong> You can craft a wiki for various topics, including majors, courses, events, or notable individuals - all these contents are easily accessible via SSO!</p>
+          </div>
+          <div>
+            <p>We acknowledge that SSO may not encompass all information as it is primarily web-focused, potentially missing out on events or happenings on campus that aren't shared online. DKU-Wiki fills this gap, providing an opportunity for you to share the stories, experiences, and insights you wish to disseminate. We particularly encourage sharing of experiences and recommendations regarding majors and courses, as detailed course information might not be readily available on the website.</p>
+          </div>
+          <div>
+            <p>We invite you to explore DKU-Wiki and begin contributing! As a fledgling project, we're eagerly looking for passionate contributors. Every piece of knowledge shared enriches our community and furthers our collective learning.</p>
+          </div>
+          <div>
+            <h2 data-heading="Can't Find What You're Looking For?" id="Can't_Find_What_You're_Looking_For?" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Can't Find What You're Looking For?
+            </h2>
+          </div>
+          <div>
+            <p>Our apologies if your search didn't yield the desired results. Yet, we consider such moments as opportunities for growth! </p>
+          </div>
+          <div>
+            <p>First, make sure you didn't search <strong>long sentences</strong>, the capability for understanding natural language input is directly relate to our algorithm, you can refer to <a class="internal-link" data-href="./docs/Retrieval.md" href="docs/retrieval.html" target="_self" rel="noopener">Retrieval Engine</a> for detailed explanation.</p>
+          </div>
+          <div>
+            <p>Also, please remember, as DKU's website is a relatively small digital platform, <strong>it holds limited information</strong>. While we strive for completeness, our current focus on <strong>DKU-only</strong> content means we can't match the vast range of a search engine like Google.</p>
+          </div>
+          <div>
+            <p>But there's still a large possibility that we might have overlooked some important websites in our current <a class="internal-link" data-href="./docs/Scraper.md" href="docs/scraper.html" target="_self" rel="noopener">crawling strategy</a>. If you're aware of any such missed sites, we'd be grateful to know!</p>
+          </div>
+          <div>
+            <p>Simply <strong>want your personal website to be searchable?</strong> We're delighted to facilitate that! Please follow <strong><a class="internal-link" data-href="./docs/IndexGuide.md" href="docs/indexguide.html" target="_self" rel="noopener">this guide</a></strong> to attract more visitors to your website. </p>
+          </div>
+          <div>
+            <p>Additionally, if you've stumbled upon intriguing locations or sources that you think interesting, please don't hesitate to let us know! As long as the content is relevant to DKU, we would be more than happy to make it searchable within our system. Your active participation aids us in continually improving and expanding the breadth of our service.</p>
+          </div>
+          <div>
+            <h2 data-heading="Unable to Connect?" id="Unable_to_Connect?" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Unable to Connect?
+            </h2>
+          </div>
+          <div>
+            <p><strong>Ensure you are connected to DKU's WiFi</strong>.</p>
+          </div>
+          <div>
+            <p>SSO, being primarily an internal search engine, operates on a server within the DKU LAN. If you are not on campus at the moment, you need to connect to DKU's proxy in order to access our server.</p>
+          </div>
+          <div>
+            <p><strong>Both the DKU Wiki and SSO run on the same server</strong>, implying that you need to be connected to the internal network to access the Wiki as well.</p>
+          </div>
+          <div>
+            <h2 data-heading="Report Bugs" id="Report_Bugs" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Report Bugs
+            </h2>
+          </div>
+          <div>
+            <p>At present, SSO is in its beta stage, with numerous areas ripe for enhancement. We acknowledge that perfection can't be achieved overnight; therefore, we're committed to making steady progress with every step.</p>
+          </div>
+          <div>
+            <p>If you encounter any bugs or have suggestions for our project, please feel welcome to post an issue on our <strong><a data-tooltip-position="top" aria-label="https://github.com/midstreeeam/sso-page/issues" rel="noopener" class="external-link" href="https://github.com/midstreeeam/sso-page/issues" target="_blank">bug report page</a></strong>. Your insight is highly valuable to us.</p>
+          </div>
+          <div>
+            <p>We strongly encourage and appreciate your suggestions as they play a pivotal role in shaping the future of SSO!</p>
+          </div>
+          <div>
+            <h2 data-heading="The SSO Team" id="The_SSO_Team" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>The SSO Team
+            </h2>
+          </div>
+          <div>
+            <ul class="has-list-bullet">
+              <li data-line="0">
+                <div class="list-bullet"></div><a data-tooltip-position="top" aria-label="" rel="noopener" class="external-link" href="" target="_blank">Jiang Long</a>: DKU Senior Lecturer in Computer Science, supervisor of SSO project.
+              </li>
+              <li data-line="1">
+                <div class="list-bullet"></div><a data-tooltip-position="top" aria-label="" rel="noopener" class="external-link" href="" target="_blank">Kaiyuan Lou</a>: DKU student, class of 2024, founder of SSO. He is responsible for structural design and implementation of processor, retrieval engine, and benchmark system.
+              </li>
+              <li data-line="2">
+                <div class="list-bullet"></div><a data-tooltip-position="top" aria-label="" rel="noopener" class="external-link" href="" target="_blank">Loe Bi</a>: DKU student, class of 2024, key contributor. His primary responsibilities encompass the design of the database structure, webapp deployment, and automation. Additionally, he has played a crucial role in implementing the data processor and retrieval engine.
+              </li>
+              <li data-line="3">
+                <div class="list-bullet"></div><a data-tooltip-position="top" aria-label="" rel="noopener" class="external-link" href="" target="_blank">Sichang He</a>: DKU student, class of 2024, key contributor. He designed and implemented the <a class="internal-link" data-href="./docs/Scraper.md" href="docs/scraper.html" target="_self" rel="noopener">Scraper</a>, and he also contribute to front-end design.
+              </li>
+              <li data-line="4">
+                <div class="list-bullet"></div><a data-tooltip-position="top" aria-label="" rel="noopener" class="external-link" href="" target="_blank">Beilong Tang</a>: DKU student, class of 2025, key contributor. He is responsible in design and implementation of <a data-tooltip-position="top" aria-label="http://hun.colab.dukekunshan.edu.cn:8000/#/indexing/" rel="noopener" class="external-link" href="http://hun.colab.dukekunshan.edu.cn:8000/#/indexing/" target="_blank">DKU-Wiki</a>, and he also contribute to benchmark system and front-end.
+              </li>
+              <li data-line="5">
+                <div class="list-bullet"></div><a data-tooltip-position="top" aria-label="" rel="noopener" class="external-link" href="" target="_blank">Echchabi Othmane</a> DKU student, class of 2025. He offers idea for front-end improvements.
+              </li>
+              <li data-line="6">
+                <div class="list-bullet"></div><a data-tooltip-position="top" aria-label="" rel="noopener" class="external-link" href="" target="_blank">Jay Shi</a>: DKU student, class of 2025. He is responsible for managing DII-relate tasks.
+              </li>
+            </ul>
+          </div>
+          <div class="mod-footer"></div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-right sidebar">
+      <div class="sidebar-content"><span class="sidebar-section-header">Interactive Graph</span>
+        <div class="graph-view-placeholder">
+          <div class="graph-view-container">
+            <div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-arrow-up-right">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg></div>
+            <canvas id="graph-canvas" width="512px" height="512px"></canvas>
+          </div>
+        </div>
+        <div class="tree-container outline-tree" data-depth="0">
+          <div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div>
+          <div class="tree-scroll-area">
+            <div class="tree-item mod-tree-heading" data-depth="1">
+              <div class="tree-item-contents"><a class="tree-item-link" href="#SSO:_Search-So"><span class="tree-item-title">SSO: Search-So</span></a></div>
+              <div class="tree-item-children">
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#What_is_SSO"><span class="tree-item-title">What is SSO</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Getting_Started_with_SSO"><span class="tree-item-title">Getting Started with SSO</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Unveiling_the_SSO_Mechanism"><span class="tree-item-title">Unveiling the SSO Mechanism</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Our_Data_Sources"><span class="tree-item-title">Our Data Sources</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#DKU-Wiki"><span class="tree-item-title">DKU-Wiki</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Can't_Find_What_You're_Looking_For?"><span class="tree-item-title">Can't Find What You're Looking For?</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Unable_to_Connect?"><span class="tree-item-title">Unable to Connect?</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Report_Bugs"><span class="tree-item-title">Report Bugs</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#The_SSO_Team"><span class="tree-item-title">The SSO Team</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
