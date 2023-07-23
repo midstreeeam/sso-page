@@ -149,7 +149,13 @@
   },
   "active": "33a977add3fb932a",
   "lastOpenFiles": [
+    "docs/IndexGuide.html",
     "docs/IndexGuide.md",
+    "docs/devlog.html",
+    "docs/history.html",
+    "docs/processor.html",
+    "docs/retrieval.html",
+    "docs/scraper.html",
     "docs/devlog.md",
     "docs/history.md",
     "docs/processor.md",
@@ -158,7 +164,6 @@
     "index.md",
     "README.md",
     "docs/Scraper.md",
-    "docs/history.html",
     "docs/devLog.html",
     "docs/DevLog.md",
     "docs/History.md",
@@ -168,10 +173,6 @@
     "lib/scripts/webpage.js",
     "lib/scripts/graph_wasm.wasm",
     "lib/scripts/graph_wasm.js",
-    "lib/scripts/graph_view.js",
-    "lib/scripts/graph-render-worker.js",
-    "lib/scripts",
-    "lib/styles/snippets.css",
     "imgs/index.gif"
   ]
 }
