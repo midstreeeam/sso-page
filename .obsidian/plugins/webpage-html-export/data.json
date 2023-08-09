@@ -1,7 +1,7 @@
 {
   "inlineCSS": true,
   "inlineJS": true,
-  "inlineImages": false,
+  "inlineImages": true,
   "includePluginCSS": "",
   "includeSvelteCSS": true,
   "makeNamesWebStyle": false,
@@ -16,7 +16,7 @@
   "showWarningsInExportLog": true,
   "addDarkModeToggle": true,
   "includeOutline": true,
-  "includeGraphView": true,
+  "includeGraphView": false,
   "includeFileTree": true,
   "exportPreset": "website",
   "openAfterExport": true,
@@ -27,5 +27,5 @@
   "graphEdgePruning": 100,
   "graphMinNodeSize": 3,
   "graphMaxNodeSize": 7,
-  "lastExportPath": "F:\\Working\\git\\hub\\sso-page"
+  "lastExportPath": "C:\\Users\\PC\\Desktop\\Poster draft.html"
 }

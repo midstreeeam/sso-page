@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "33a977add3fb932a",
+            "id": "bb0cfcc49ee0443d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "Poster draft.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Poster draft.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Poster draft.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Poster draft.md"
               }
             }
           }
@@ -147,15 +147,24 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "33a977add3fb932a",
+  "active": "bb0cfcc49ee0443d",
   "lastOpenFiles": [
-    "docs/DevLog.md",
-    "docs/History.md",
-    "docs/IndexGuide.md",
-    "docs/Processor.md",
-    "docs/Retrieval.md",
-    "docs/Scraper.md",
+    "imgs/qr-wiki.png",
+    "imgs/qr-sso.png",
+    "imgs/qr-doc.png",
     "index.md",
+    "Poster draft.md",
+    "docs/Scraper.md",
+    "imgs/poster-3.png",
+    "imgs/poster-2.png",
+    "imgs/poster-0.png",
+    "imgs/poster-1.png",
+    "imgs/index.gif",
+    "docs/Processor.md",
+    "docs/History.md",
+    "docs/DevLog.md",
+    "docs/Retrieval.md",
+    "docs/IndexGuide.md",
     "README.md",
     "docs/indexguide.md",
     "docs/devlog.md",
@@ -172,7 +181,6 @@
     "docs/devlog.html",
     "docs/history.html",
     "docs/processor.html",
-    "docs/retrieval.html",
-    "imgs/index.gif"
+    "docs/retrieval.html"
   ]
 }
