@@ -6,7 +6,7 @@ The Retrieval Engine embodies the essence of **Search**.
 
 Having run the [Processor](https://chat.openai.com/c/Processor.html), we're now equipped with an array of resources - BM25 scores, PageRank scores, inverse index, and more. Yet, the key question is, how do we execute a search when a user inputs a query and hits 'Enter'? How can we convert complex data relationships into digestible search results? This is precisely where the Retrieval Engine steps in.
 
-For versatility and optimization, we have incorporated two distinct retrieval models within the engine - the **Boolean Retrieval Model** and the **Vector Retrieval Model**. These models can independently and seamlessly conduct their operations, ensuring a smooth user experience.
+For versatility and optimization, we have incorporated two distinct retrieval models within the engine - the **Sparse Matrix Retrieval Model** and the **Vector Retrieval Model**. These models can independently and seamlessly conduct their operations, ensuring a smooth user experience.
 
 ## Single Token Search
 
@@ -19,6 +19,8 @@ We use a simple linear combination strategy to merge the BM25 and PageRank score
 Consequently, single token searches are typically rapid and accurate. It is the **most recommended usage** of the SSO search engine.
 
 ## Boolean Retrieval
+
+Boolean Retrieval is a very primitive way of retrieval. It basically answers one single question does this word (token) exists in this web page (document). We could think about the retrieval
 
 ## Vector Retrieval
 
