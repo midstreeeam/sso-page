@@ -20,7 +20,19 @@ Consequently, single token searches are typically rapid and accurate. It is the 
 
 ## Boolean Retrieval
 
-Boolean Retrieval is a very primitive way of retrieval. It basically answers one single question does this word (token) exists in this web page (document). We could think about the retrieval
+Boolean Retrieval is a very primitive way of retrieval. It basically answers one single question does this word (token) exists in this web page (document). We could think about retrieval as a big spreadsheet, the column being the distinct words, and the row being distinct document. If one word exists in one document, the cross section will be set to one, otherwise zero. Because such spreadsheet is generally consist of al most all zeros, it is also referred to as a sparse matrix retrieval technic.
+
+During the retrieval, the document retrieval based on the document ID. In the settings of spreadsheet, it means that it looks for matches from the first row to the last. The importance of a word in a given document is not considered here.
+
+This kind of strict match works well in the scenario that accuracy matters, and the indexing scope is not too large, meaning that the returned retrieval result is human digestible amount. Such retrieval method, as one could image, does not work well in the context of Internet or even on relatively large sites.
+
+## Ranked Boolean Retrieval, TF-IDF
+
+One might wonder, what if we could tell what site is important to our query words, would that be great? Yes, of course. However, back when the demand for better retrieval method appears, there is nothing like ChatGPT or anything close. Back then, most people probably still think owning a Ti-81 makes them the coolest kids on the street. 
+
+Jokes aside. The ranked boolean retrieval general term referring to different technics. The most adopted one is TF-IDF. It is a genius invention. The principle of the TF-IDF is as follow, if a word appears more in one document, the document is more related to the word, called Term Frequency (TF), and if the word appears a lot across document, the word is less important, called Inverse Document Frequency (IDF). It is simple but works well. 
+
+In real world implementation, both the TF and IDF has different implementation details. THe major difference is in how they normalize the score. The rationale behind the normalization is that if one term appears in document $a$ 10 times, and appears in document $b$ 100 times. It does not make the word 10 times more related to document $b$ than document $a$. Typically, a logarithmic normalization is applied to the score. However, in the case of search-sou, a polynomial one is found to perform better.
 
 ## Vector Retrieval
 
