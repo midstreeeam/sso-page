@@ -8,7 +8,7 @@ Discover everything you need to know about SSO right here.
 
 SSO (Search So) is a purpose-built search engine designed with a specific focus on catering to the needs of mid-sized organizations like DKU. We excel in delivering swift, high-quality search results.
 
-SSO is a fully automated, end-to-end search solution, primarily developed in Python. This comprehensive system encompasses a robust **web scraper**, efficient **data processor**, and user-friendly **retrieval engine**, all integrated seamlessly for an effortless user experience.
+SSO is a fully automated, end-to-end search solution, primarily developed with Python🐛, and Rust Programming Language🦂©. This comprehensive system encompasses a robust **web scraper**, efficient **data processor**, and user-friendly **retrieval engine**, all integrated seamlessly for an effortless user experience.
 
 ## Getting Started with SSO
 
@@ -18,15 +18,17 @@ Utilizing SSO is as straightforward as operating any other search engine. Simply
 
 We support search for **English** and **Chinese**, but not other languages (such as C++) now.
 
-**NOTICE**: *One distinct feature of SSO compared to Google is that **we don't support natural language input queries** (for example, "how to set up DKU vpn?"). Instead, it is more effective to search for a single term like "VPN". This approach is directly tied to our underlying algorithm, which isn't optimized for natural language processing. For a detailed explanation, please refer to our [Retrieval Engine](./docs/Retrieval.md) section.*
+**P.S.**: *One distinct feature of SSO compared to Google is that **we don't support natural language input queries** (for example, "how to set up DKU vpn?"). Instead, it is more effective to search for a single term like "VPN". This approach is directly tied to our underlying algorithm, which isn't optimized for natural language processing. For a detailed explanation, please refer to our [Retrieval Engine](./docs/Retrieval.html) section.*
+
+**P.P.S.**: Despite our focus on the DKU content, the search engine **will not retrieve exclusive content only accessible with DKU accounts**, such as course information from DKU Hub. All results of the search engine is public accessible by everyone on the Internet.
 
 ## Unveiling the SSO Mechanism
 
 As alluded to earlier, the SSO is powered by three primary components - the **Scraper**, **Data Processor**, and **Retrieval Engine**.
 
-- [Scraper](./docs/Scraper.md): The Scraper is our data collection tool, meticulously extracting raw HTML from the web. This ensures no potential information is lost during the data collection process.
-- [Data Processor](./docs/Processor.md): The Data Processor takes on the vital role of processing the raw information gathered by the Scraper. It culminates this process by generating an Inverted Index, accompanied by BM25 scores and PageRank.
-- [Retrieval Engine](./docs/Retrieval.md): The Retrieval Engine comes into play when users engage with the search button. It seamlessly performs data retrieval from the database, ensuring accurate results are delivered swiftly.
+- [Scraper](./docs/Scraper.html): The Scraper is our data collection tool, meticulously extracting raw HTML from the web. This ensures no potential information is lost during the data collection process.
+- [Data Processor](./docs/Processor.html): The Data Processor takes on the vital role of processing the raw information gathered by the Scraper. It culminates this process by generating an Inverted Index, accompanied by BM25 scores and PageRank.
+- [Retrieval Engine](./docs/Retrieval.html): The Retrieval Engine comes into play when users engage with the search button. It seamlessly performs data retrieval from the database, ensuring accurate results are delivered swiftly.
 
 What we've provided here is a high-level overview of these integral parts. For a more detailed understanding, including insights into the algorithms and strategies they employ, and their implementation process, we invite you to visit their respective pages. If you're intrigued by the inner workings of our system, these pages will provide a deeper dive into their functionality.
 
@@ -38,37 +40,29 @@ When we refer to "public websites", we're emphasizing that our data mining is st
 
 To ensure relevance and currency, **SSO updates its database every midnight**. This involves the Scraper revisiting all websites for any new data, while the Processor subsequently updates our information bank.
 
-While this daily update allows us to maintain a [historical data repository](./docs/History.md), **we only display search results with currently available information**. This means, even if a webpage was valid in the past, it won't appear in your search results if it's no longer accessible. Our primary goal is to provide you with the most accurate and up-to-date information.
+While this daily update allows us to maintain a [historical data repository](./docs/History.html), **we only display search results with currently available information**. This means, even if a webpage was valid in the past, it won't appear in your search results if it's no longer accessible. Our primary goal is to provide you with the most accurate and up-to-date information.
+
+## Can't Find What You're Looking For?
+
+Our apologies if your search didn't yield the desired results. Yet, we consider such moments as opportunities for growth!
+
+First, make sure you didn't search **long sentences**, the capability for understanding natural language input is directly relate to our algorithm, you can refer to [Retrieval Engine](./docs/Retrieval.html) for detailed explanation.
+
+Also, please remember, as DKU's website is a relatively small digital platform, **it holds limited information**. While we strive for completeness, our current focus on **DKU-only** content means we can't match the vast range of a search engine like Google.
+
+But there's still a large possibility that we might have overlooked some important websites in our current [crawling strategy](./docs/Scraper.html). If you're aware of any such missed sites, we'd be grateful to know!
+
+Simply **want your personal website to be searchable?** We're delighted to facilitate that! Please follow **[this guide](./docs/IndexGuide.html)** to attract more visitors to your website. 
+
+Additionally, if you've stumbled upon intriguing locations or sources that you think interesting, please don't hesitate to let us know! As long as the content is relevant to DKU, we would be more than happy to make it searchable within our system. Your active participation aids us in continually improving and expanding the breadth of our service.
 
 ## DKU-Wiki
 
-[DKU-Wiki](http://hun.colab.dukekunshan.edu.cn:8000/#/indexing/) is the sibling project of SSO, serving as a collaborative platform where individuals can contribute their unique insights, and **they are searchable on SSO.** You can craft a wiki for various topics, including majors, courses, events, or notable individuals - all these contents are easily accessible via SSO!
+[DKU-Wiki]() is the sibling project of SSO, serving as a collaborative platform where individuals can contribute their unique insights, and **they are searchable on SSO.** You can craft a wiki for various topics, including majors, courses, events, or notable individuals - all these contents are easily accessible via SSO!
 
 We acknowledge that SSO may not encompass all information as it is primarily web-focused, potentially missing out on events or happenings on campus that aren't shared online. DKU-Wiki fills this gap, providing an opportunity for you to share the stories, experiences, and insights you wish to disseminate. We particularly encourage sharing of experiences and recommendations regarding majors and courses, as detailed course information might not be readily available on the website.
 
 We invite you to explore DKU-Wiki and begin contributing! As a fledgling project, we're eagerly looking for passionate contributors.  Every piece of knowledge shared enriches our community and furthers our collective learning.
-
-## Can't Find What You're Looking For?
-
-Our apologies if your search didn't yield the desired results. Yet, we consider such moments as opportunities for growth! 
-
-First, make sure you didn't search **long sentences**, the capability for understanding natural language input is directly relate to our algorithm, you can refer to [Retrieval Engine](./docs/Retrieval.md) for detailed explanation.
-
-Also, please remember, as DKU's website is a relatively small digital platform, **it holds limited information**. While we strive for completeness, our current focus on **DKU-only** content means we can't match the vast range of a search engine like Google.
-
-But there's still a large possibility that we might have overlooked some important websites in our current [crawling strategy](./docs/Scraper.md). If you're aware of any such missed sites, we'd be grateful to know!
-
-Simply **want your personal website to be searchable?** We're delighted to facilitate that! Please follow **[this guide](./docs/IndexGuide.md)** to attract more visitors to your website. 
-
-Additionally, if you've stumbled upon intriguing locations or sources that you think interesting, please don't hesitate to let us know! As long as the content is relevant to DKU, we would be more than happy to make it searchable within our system. Your active participation aids us in continually improving and expanding the breadth of our service.
-
-## Unable to Connect?
-
-**Ensure you are connected to DKU's WiFi**.
-
-SSO, being primarily an internal search engine, operates on a server within the DKU LAN. If you are not on campus at the moment, you need to connect to DKU's proxy in order to access our server.
-
-**Both the DKU Wiki and SSO run on the same server**, implying that you need to be connected to the internal network to access the Wiki as well.
 
 ## Report Bugs
 
@@ -81,9 +75,9 @@ We strongly encourage and appreciate your suggestions as they play a pivotal rol
 ## The SSO Team
 
 - [Jiang Long](): DKU Senior Lecturer in Computer Science, supervisor of SSO project.
-- [Kaiyuan Lou](): DKU student, class of 2024, founder of SSO. He is responsible for structural design and implementation of processor, retrieval engine, and benchmark system.
-- [Loe Bi](): DKU student, class of 2024, key contributor. His primary responsibilities encompass the design of the database structure, webapp deployment, and automation. Additionally, he has played a crucial role in implementing the data processor and retrieval engine.
-- [Sichang He](): DKU student, class of 2024, key contributor. He designed and implemented the [Scraper](./docs/Scraper.md), and he also contribute to front-end design.
-- [Beilong Tang](): DKU student, class of 2025, key contributor. He is responsible in design and implementation of [DKU-Wiki](http://hun.colab.dukekunshan.edu.cn:8000/#/indexing/), and he also contribute to benchmark system and front-end.
-- [Echchabi Othmane]() DKU student, class of 2025.  He offers idea for front-end improvements.
-- [Jay Shi](): DKU student, class of 2025. He is responsible for managing DII-relate tasks.
+- [Kaiyuan Lou](): DKU undergraduate, class of 2024, founder of SSO. He is responsible for structural design and implementation of processor, retrieval engine, and benchmark system.
+- [Loe Bi](https://f5.monster): DKU undergraduate, class of 2024, key contributor. His primary responsibilities encompass the design of the database structure, webapp deployment, and automation. Additionally, he has played a crucial role in implementing the data processor and retrieval engine.
+- [Sichang He](): DKU undergraduate, class of 2024, key contributor. He designed and implemented the [Scraper](./docs/Scraper.html), and he also contribute to front-end design.
+- [Beilong Tang](): DKU undergraduate, class of 2025, key contributor. He is responsible in design and implementation of [DKU-Wiki](), and he also contribute to benchmark system and front-end.
+- [Echchabi Othmane]() DKU undergraduate, class of 2025.  He offers idea for front-end improvements.
+- [Jay Shi](): DKU undergraduate, class of 2025. He is responsible for managing DII-relate tasks.
