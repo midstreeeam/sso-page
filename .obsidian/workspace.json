@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Poster draft.md",
+                "file": "docs/DevLog.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Poster draft.md",
+                "file": "docs/Processor.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Poster draft.md",
+                "file": "docs/Processor.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Poster draft.md"
+                "file": "docs/Processor.md"
               }
             }
           }
@@ -147,24 +147,61 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "bb0cfcc49ee0443d",
+  "floating": {
+    "id": "73692575c64105aa",
+    "type": "floating",
+    "children": [
+      {
+        "id": "28c95ee31fb1d666",
+        "type": "window",
+        "children": [
+          {
+            "id": "a99c3c869c4ac27e",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "30da9bca3332546f",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "docs/Processor.md",
+                    "mode": "preview",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 270,
+        "y": 375,
+        "width": 600,
+        "height": 300,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "30da9bca3332546f",
   "lastOpenFiles": [
+    "docs/Scraper.md",
+    "index.md",
+    "Poster draft.md",
+    "docs/DevLog.md",
+    "docs/IndexGuide.md",
+    "docs/History.md",
+    "docs/Processor.md",
+    "docs/Retrieval.md",
     "imgs/qr-wiki.png",
     "imgs/qr-sso.png",
     "imgs/qr-doc.png",
-    "index.md",
-    "Poster draft.md",
-    "docs/Scraper.md",
     "imgs/poster-3.png",
     "imgs/poster-2.png",
     "imgs/poster-0.png",
     "imgs/poster-1.png",
     "imgs/index.gif",
-    "docs/Processor.md",
-    "docs/History.md",
-    "docs/DevLog.md",
-    "docs/Retrieval.md",
-    "docs/IndexGuide.md",
     "README.md",
     "docs/indexguide.md",
     "docs/devlog.md",

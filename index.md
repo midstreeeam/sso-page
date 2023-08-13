@@ -75,7 +75,7 @@ We strongly encourage and appreciate your suggestions as they play a pivotal rol
 ## The SSO Team
 
 - [Jiang Long](): DKU Senior Lecturer in Computer Science, supervisor of SSO project.
-- [Kaiyuan Lou](): DKU undergraduate, class of 2024, founder of SSO. He is responsible for structural design and implementation of processor, retrieval engine, and benchmark system.
+- [Kaiyuan Lou](http://fake.kaiyuanlou.com/): DKU undergraduate, class of 2024, founder of SSO. He is responsible for structural design and implementation of processor, retrieval engine, and benchmark system.
 - [Loe Bi](https://f5.monster): DKU undergraduate, class of 2024, key contributor. His primary responsibilities encompass the design of the database structure, webapp deployment, and automation. Additionally, he has played a crucial role in implementing the data processor and retrieval engine.
 - [Sichang He](): DKU undergraduate, class of 2024, key contributor. He designed and implemented the [Scraper](./docs/Scraper.html), and he also contribute to front-end design.
 - [Beilong Tang](): DKU undergraduate, class of 2025, key contributor. He is responsible in design and implementation of [DKU-Wiki](), and he also contribute to benchmark system and front-end.
