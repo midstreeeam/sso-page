@@ -53,5 +53,3 @@ Although it hasn't been integrated into SSO, you can still see their implementat
 The major distinction between **Sparse Retrieval** (like SSO) and **Dense Retrieval** (like Google) underlies this issue. Sparse retrieval models can't comprehend the natural language inputs from users, whereas dense retrieval models, containing **LLMs** (Language Learning Models), can.
 
 Dense retrieval models employ vector retrieval, much like sparse retrieval models we have. However, instead of using a highly sparse embedding matrix, dense retrieval employs LLMs (primarily **BERT**) to create compact, dense embeddings for each document. With appropriate fine-tuning, the BERT encoder can understand human languages, enabling natural language searches on platforms like Google.
-
-Integrating a dense retrieval model into SSO is challenging as it necessitates additional training of LLMs. Furthermore, we would need to transition our database from a traditional format to a vector database for efficient vector similarity searches. (the search space truly expand to the whole corpus in dense retrieval) Therefore, at this stage, we are not considering the addition of dense retrieval.
