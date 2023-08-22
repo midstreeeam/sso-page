@@ -4,7 +4,7 @@
 
 The Retrieval Engine embodies the essence of **Search**.
 
-Having run the [Processor](https://chat.openai.com/c/Processor.html), we're now equipped with an array of resources - BM25 scores, PageRank scores, inverse index, and more. Yet, the key question is, how do we execute a search when a user inputs a query and hits 'Enter'? How can we convert complex data relationships into digestible search results? This is precisely where the Retrieval Engine steps in.
+Having run the [Processor](https://chat.openai.com/c/Processor.md), we're now equipped with an array of resources - BM25 scores, PageRank scores, inverse index, and more. Yet, the key question is, how do we execute a search when a user inputs a query and hits 'Enter'? How can we convert complex data relationships into digestible search results? This is precisely where the Retrieval Engine steps in.
 
 For versatility and optimization, we have incorporated two distinct retrieval models within the engine - the **Sparse Matrix Retrieval Model** and the **Vector Retrieval Model**. These models can independently and seamlessly conduct their operations, ensuring a smooth user experience.
 

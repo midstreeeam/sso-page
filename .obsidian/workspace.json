@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "a6927876f8d84cb8",
+        "id": "6c166af9099fd845",
         "type": "tabs",
         "children": [
           {
-            "id": "bb0cfcc49ee0443d",
+            "id": "41ed65bb8d04eaa2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/DevLog.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Processor.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Processor.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Processor.md"
+                "file": "index.md"
               }
             }
           }
@@ -147,53 +147,17 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "floating": {
-    "id": "73692575c64105aa",
-    "type": "floating",
-    "children": [
-      {
-        "id": "28c95ee31fb1d666",
-        "type": "window",
-        "children": [
-          {
-            "id": "a99c3c869c4ac27e",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "30da9bca3332546f",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "docs/Processor.md",
-                    "mode": "preview",
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 270,
-        "y": 375,
-        "width": 600,
-        "height": 300,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "30da9bca3332546f",
+  "active": "41ed65bb8d04eaa2",
   "lastOpenFiles": [
-    "docs/Scraper.md",
+    "doc.searchso.cn.md",
     "index.md",
-    "Poster draft.md",
-    "docs/DevLog.md",
+    "docs/Scraper.md",
+    "docs/Retrieval.md",
+    "docs/Processor.md",
     "docs/IndexGuide.md",
     "docs/History.md",
-    "docs/Processor.md",
-    "docs/Retrieval.md",
+    "docs/DevLog.md",
+    "Poster draft.md",
     "imgs/qr-wiki.png",
     "imgs/qr-sso.png",
     "imgs/qr-doc.png",
