@@ -16054,6 +16054,32 @@ community:
   </style>
 
 
+  <!-- Graph View Data -->
+  <script>
+    let nodes = {
+      "nodeCount": 8,
+      "linkCount": 7,
+      "radii": [7, 6, 6, 6, 6, 4.75, 3, 3],
+      "labels": ["index", "Processor", "Scraper", "Retrieval", "IndexGuide", "History", "Poster draft", "DevLog"],
+      "paths": ["index.html", "docs/Processor.html", "docs/Scraper.html", "docs/Retrieval.html", "docs/IndexGuide.html", "docs/History.html", "Poster draft.html", "docs/DevLog.html"],
+      "linkSources": [3, 2, 0, 0, 0, 0, 0],
+      "linkTargets": [1, 4, 3, 2, 1, 5, 4]
+    };
+    let attractionForce = 1;
+    let linkLength = 10;
+    let repulsionForce = 150;
+    let centralForce = 3;
+    let edgePruning = 100;
+  </script>
+
+  <script type="module" src="lib/scripts/graph_view.js"></script>
+
+  <script src="lib/scripts/graph_wasm.js"></script>
+
+  <script src="lib/scripts/tinycolor.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js" integrity="sha512-Ch/O6kL8BqUwAfCF7Ie5SX1Hin+BJgYH4pNjRqXdTEqMsis1TUYg+j6nnI9uduPjGaj7DN4UKCZgpvoExt6dkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <script>
     //#region Helpers
 
@@ -16931,7 +16957,7 @@ community:
       </div>
     </div>
     <div class="document-container">
-      <div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings show-indentation-guide allow-fold-lists" tabindex="-1" style="tab-size: 4;">
+      <div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings show-indentation-guide allow-fold-lists" style="tab-size: 4;">
         <style id="MJX-CHTML-styles">
           mjx-container[jax="CHTML"] {
             line-height: 0;
@@ -18291,7 +18317,16 @@ community:
       </div>
     </div>
     <div class="sidebar-right sidebar">
-      <div class="sidebar-content">
+      <div class="sidebar-content"><span class="sidebar-section-header">Interactive Graph</span>
+        <div class="graph-view-placeholder">
+          <div class="graph-view-container">
+            <div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-arrow-up-right">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg></div>
+            <canvas id="graph-canvas" width="512px" height="512px"></canvas>
+          </div>
+        </div>
         <div class="tree-container outline-tree" data-depth="0">
           <div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div>
           <div class="tree-scroll-area">
